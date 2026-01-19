@@ -3,26 +3,29 @@ package com.Library_Management_System.Mini_Project.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Member")
+@Table(name = "members")
 public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer memberID;
+    private Long id;
 
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false, unique = true)
     private String email;
 
-    // Getters and Setters
-    public Integer getMemberID() {
-        return memberID;
+    public Member() {}
+
+    public Member(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
-    public void setMemberID(Integer memberID) {
-        this.memberID = memberID;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
