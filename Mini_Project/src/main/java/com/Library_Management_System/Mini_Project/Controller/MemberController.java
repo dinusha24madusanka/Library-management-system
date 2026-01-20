@@ -35,10 +35,10 @@ public class MemberController {
         return memberService.getMemberById(id);
     }
 
-    // PUT → Update Member  ✅ WORKING
+    // PUT → Update Member ✅ WORKING
     @PutMapping("/{id}")
     public Member updateMember(@PathVariable Long id,
-                               @RequestBody Member member) {
+            @RequestBody Member member) {
         return memberService.updateMember(id, member);
     }
 

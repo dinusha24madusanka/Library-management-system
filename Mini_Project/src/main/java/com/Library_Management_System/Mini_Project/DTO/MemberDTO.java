@@ -5,7 +5,8 @@ public class MemberDTO {
     private String name;
     private String email;
 
-    public MemberDTO() {}
+    public MemberDTO() {
+    }
 
     public String getName() {
         return name;
