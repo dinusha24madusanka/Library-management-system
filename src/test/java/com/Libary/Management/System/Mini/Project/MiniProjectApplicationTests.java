@@ -1,4 +1,4 @@
-package com.Library_Management_System.Mini_Project;
+package com.Libary.Management.System.Mini.Project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
