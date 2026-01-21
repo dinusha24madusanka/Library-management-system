@@ -17,6 +17,6 @@ public class BookEntity {
     @Column(name = "title", nullable = false, length = 150)
     private String title;
 
-    @Column(nullable = false)
+    @Column(name = "AvailableCopies", nullable = false)
     private Integer availableCopies;
 }
