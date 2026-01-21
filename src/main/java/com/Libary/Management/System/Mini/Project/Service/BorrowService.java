@@ -1,4 +1,3 @@
-// BorrowService.java
 package com.Libary.Management.System.Mini.Project.Service;
 
 import com.Libary.Management.System.Mini.Project.DTO.BorrowDTO;
@@ -67,13 +66,15 @@ public class BorrowService {
     }
 
     public List<BorrowDTO> getBorrowsByMemberId(Integer memberId) {
-        return borrowRepository.findByMemberId(memberId).stream()
+        return borrowRepository.findAll().stream()
+                .filter(b -> b.getMember().getMemberId().equals(memberId))
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
 
     public List<BorrowDTO> getBorrowsByBookId(Integer bookId) {
-        return borrowRepository.findByBookId(bookId).stream()
+        return borrowRepository.findAll().stream()
+                .filter(b -> b.getBook().getBookId().equals(bookId))
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
