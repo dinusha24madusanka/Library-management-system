@@ -3,12 +3,15 @@ package com.Libary.Management.System.Mini.Project.Service;
 import com.Libary.Management.System.Mini.Project.DTO.MemberDTO;
 import com.Libary.Management.System.Mini.Project.Entity.MemberEntity;
 import com.Libary.Management.System.Mini.Project.Repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class MemberService {
+
+    @Autowired
     private final MemberRepository memberRepository;
 
     public MemberService(MemberRepository memberRepository) {
@@ -49,6 +52,6 @@ public class MemberService {
     }
 
     private MemberDTO convertToDTO(MemberEntity member) {
-        return new MemberDTO(member.getMemberId(), member.getName(), member.getEmail());
+        return new MemberDTO(member.getMemberId(), member.getName(), member.getEmail(), member.getPhone());
     }
 }

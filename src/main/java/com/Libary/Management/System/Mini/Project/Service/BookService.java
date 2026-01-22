@@ -52,6 +52,6 @@ public class BookService {
     }
 
     private BookDTO convertToDTO(BookEntity book) {
-        return new BookDTO(book.getBookId(), book.getTitle(), book.getAvailableCopies());
+        return new BookDTO(book.getBookId(), book.getTitle(), book.getAuthor(),book.getIsbn(),book.getAvailableCopies());
     }
 }
